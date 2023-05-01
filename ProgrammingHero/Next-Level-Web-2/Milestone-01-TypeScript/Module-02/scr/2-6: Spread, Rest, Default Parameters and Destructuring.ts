@@ -1,9 +1,9 @@
 // can't use default parameter at first element or parameter.
-function add(num1: number, num2: number = 10): number {
+function add2(num1: number, num2: number = 10): number {
   console.log(num1 + num2);
   return num1 + num2;
 }
-add(5);
+add2(5);
 
 // Destructuring
 const myFriend = ["a", "b", "c"];
