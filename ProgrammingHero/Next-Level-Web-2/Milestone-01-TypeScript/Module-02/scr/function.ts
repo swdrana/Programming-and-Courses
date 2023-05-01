@@ -1,5 +1,3 @@
-import { it } from "node:test";
-
 // Normal Function
 function add(num1: number, num2: number): number {
   console.log(num1 + num2);
