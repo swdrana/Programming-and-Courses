@@ -47,7 +47,6 @@ then need to config the `package.json` file. add inside `“scripts”` section:
 ```json
 "scripts": {
 		"start": "nodemon index.js",
-ts-node-dev --respawn --transpile-only server.ts
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ```
