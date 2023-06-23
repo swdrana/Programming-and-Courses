@@ -1,0 +1,15 @@
+{
+  "description": "1.  Convert the following JavaScript array into a TypeScript tuple ```     const userInfo = [101, \"Ema\", \"John\", true,  , \"2023\"]; ``` 2.  Write a TypeScript function that takes in two arrays of numbers as parameters. The function should compare the elements in both arrays and return a new array that contains only the elements that are present in both arrays.",
+  "name": "module-4.5-simple-typescript-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {"start": "ts-node-dev --respawn --transpile-only Solutions.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node-dev": "^2.0.0"
+  }
+}
