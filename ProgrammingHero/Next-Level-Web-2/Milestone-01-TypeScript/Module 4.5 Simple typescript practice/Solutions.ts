@@ -60,31 +60,57 @@ const filterProduct = filterWithCriterion(
 // console.log(filterProduct);
 
 // ===================== Problem NO 4 ===================== //
-type productType = [string, number, number]
+type productType = [string, number, number];
 type productTypeTupleArray = productType[];
-const pro1:productType = ['Mobile',4000,20]
-const pro2:productType = ['Laptop',6000,10]
-const pro3:productType = ['Headphone',300,50]
-const pro4:productType = ['Charger',400,90]
-const tuppleArray:productTypeTupleArray=[pro1, pro2, pro3, pro4]
+const pro1: productType = ["Mobile", 4000, 20];
+const pro2: productType = ["Laptop", 6000, 10];
+const pro3: productType = ["Headphone", 300, 50];
+const pro4: productType = ["Charger", 400, 90];
+const tuppleArray: productTypeTupleArray = [pro1, pro2, pro3, pro4];
 
-const totalPrice = <T> (myPro:T[]):void =>{
-    let totalCost = 0;
-
- 
-}
+const totalPrice = <T>(myPro: T[]): void => {
+  let totalCost = 0;
+};
 // totalPrice<productType>(tuppleArray);
 
 // ===================== Problem NO 5 ===================== //
-const arr:number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-let sum:number = 0
-arr.map(item=>{
-  if(item%2==0){
-    sum+=item
+const arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let sum: number = 0;
+arr.map((item) => {
+  if (item % 2 == 0) {
+    sum += item;
   }
-})
+});
 // console.log(sum)
 // ===================== Problem NO 6 ===================== //
-
+interface Person {
+  name: string;
+  age: number;
+  email: string;
+}
+const personInArrey: Person[] = [
+  { name: "Rana", age: 26, email: "swdrana@hotmail.com" },
+  { name: "John", age: 30, email: "john@example.com" },
+  { name: "Alice", age: 25, email: "alice@example.com" },
+  { name: "Bob", age: 28, email: "bob@example.com" },
+];
+const findPersoneUsingEmail:(list:Person[], str:string)=>Person | null = (list,str)=>{
+  let a : Person | undefined;
+  list.map(p=>{
+    if(p.email === str){
+      // console.log(str)
+      // console.log(p)
+      a = p
+    }
+  })
+  if(typeof a !== 'undefined'){
+    // console.log(a)
+    return a;
+  } else{
+    return null;
+  }
+}
+console.log(findPersoneUsingEmail(personInArrey,'swdrana@hotmail.com'))
 // ===================== Problem NO 7 ===================== //
+
 // ===================== Problem NO 8 ===================== //
