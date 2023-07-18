@@ -96,6 +96,8 @@ const personInArrey: Person[] = [
 ];
 const findPersoneUsingEmail:(list:Person[], str:string)=>Person | null = (list,str)=>{
   let a : Person | undefined;
+
+// here i use map function but find is best for this case
   list.map(p=>{
     if(p.email === str){
       // console.log(str)
