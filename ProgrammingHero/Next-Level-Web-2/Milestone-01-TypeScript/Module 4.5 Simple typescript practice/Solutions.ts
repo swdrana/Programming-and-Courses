@@ -60,6 +60,9 @@ const filterProduct = filterWithCriterion(
 // console.log(filterProduct);
 
 // ===================== Problem NO 4 ===================== //
+// Suppose you have an array of tuples, where each tuple represents a product and contains the product name, price, and quantity. Write a TypeScript function that calculates the total cost of all the products in the array, using a generic type for the tuple and a type alias for the array.
+
+
 type productType = [string, number, number];
 type productTypeTupleArray = productType[];
 const pro1: productType = ["Mobile", 4000, 20];
@@ -68,10 +71,39 @@ const pro3: productType = ["Headphone", 300, 50];
 const pro4: productType = ["Charger", 400, 90];
 const tuppleArray: productTypeTupleArray = [pro1, pro2, pro3, pro4];
 
-const totalPrice = <T>(myPro: T[]): void => {
+const totalPrice = (myPro: productType[]): void => {
   let totalCost = 0;
+  const a =myPro.map((product)=>{
+    const [productName, price, quantity] = product;
+    totalCost += price * quantity;
+  })
+  // console.log(totalCost)
 };
-// totalPrice<productType>(tuppleArray);
+totalPrice(tuppleArray);
+
+// i've done but can't implement generic function. here is the chat GPT and of the prob 4.
+
+
+// type ProductType<T extends number> = [string, number, T];
+// type ProductTypeTupleArray<T extends number> = ProductType<T>[];
+
+// const pro1: ProductType<20> = ["Mobile", 4000, 20];
+// const pro2: ProductType<10> = ["Laptop", 6000, 10];
+// const pro3: ProductType<50> = ["Headphone", 300, 50];
+// const pro4: ProductType<90> = ["Charger", 400, 90];
+// const tuppleArray: ProductTypeTupleArray<number> = [pro1, pro2, pro3, pro4];
+
+// const totalPrice = <T extends number>(myPro: ProductTypeTupleArray<T>): void => {
+//   let totalCost = 0;
+//   myPro.forEach((product) => {
+//     const [, price, quantity] = product;
+//     totalCost += price * quantity;
+//   });
+//   console.log(totalCost);
+// };
+
+// totalPrice(tuppleArray);
+
 
 // ===================== Problem NO 5 ===================== //
 const arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -112,7 +144,7 @@ const findPersoneUsingEmail:(list:Person[], str:string)=>Person | null = (list,s
     return null;
   }
 }
-console.log(findPersoneUsingEmail(personInArrey,'swdrana@hotmail.com'))
+// console.log(findPersoneUsingEmail(personInArrey,'swdrana@hotmail.com'))
 // ===================== Problem NO 7 ===================== //
 
 // ===================== Problem NO 8 ===================== //
