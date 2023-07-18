@@ -47,6 +47,7 @@ const filterWithCriterion = <T extends keyof Product>(
   value: Product[T]
 ): Product[] => {
   return productArr.filter((item) => {
+    // console.log(value)
     return item[key] === value;
   });
 };
@@ -56,10 +57,34 @@ const filterProduct = filterWithCriterion(
   "category",
   "Category 1"
 );
-console.log(filterProduct);
+// console.log(filterProduct);
 
 // ===================== Problem NO 4 ===================== //
+type productType = [string, number, number]
+type productTypeTupleArray = productType[];
+const pro1:productType = ['Mobile',4000,20]
+const pro2:productType = ['Laptop',6000,10]
+const pro3:productType = ['Headphone',300,50]
+const pro4:productType = ['Charger',400,90]
+const tuppleArray:productTypeTupleArray=[pro1, pro2, pro3, pro4]
+
+const totalPrice = <T> (myPro:T[]):void =>{
+    let totalCost = 0;
+
+ 
+}
+// totalPrice<productType>(tuppleArray);
+
 // ===================== Problem NO 5 ===================== //
+const arr:number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let sum:number = 0
+arr.map(item=>{
+  if(item%2==0){
+    sum+=item
+  }
+})
+// console.log(sum)
 // ===================== Problem NO 6 ===================== //
+
 // ===================== Problem NO 7 ===================== //
 // ===================== Problem NO 8 ===================== //
