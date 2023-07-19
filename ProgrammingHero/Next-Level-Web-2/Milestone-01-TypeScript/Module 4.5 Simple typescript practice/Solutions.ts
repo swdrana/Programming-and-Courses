@@ -146,5 +146,23 @@ const findPersoneUsingEmail:(list:Person[], str:string)=>Person | null = (list,s
 }
 // console.log(findPersoneUsingEmail(personInArrey,'swdrana@hotmail.com'))
 // ===================== Problem NO 7 ===================== //
-
+const num: number[] = [1,2,3,4,5]
+function findMinMax (...num: number[]) {
+  if(num.length===0){
+    console.log('No Number Found')
+  }
+  let min:number = num[0]
+  let max:number = num[0]
+  num.map(n=>{
+    if(n>=max){
+      max = n
+    }
+    if(n<min){
+      min = n
+    }
+  })
+  return [min, max]
+}
+const [minimum, maximum]=findMinMax(...num)
+console.log('minimum:' ,minimum, '\nMaximum:', maximum)
 // ===================== Problem NO 8 ===================== //
