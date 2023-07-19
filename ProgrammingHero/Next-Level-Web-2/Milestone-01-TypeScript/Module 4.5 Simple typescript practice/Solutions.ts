@@ -164,5 +164,14 @@ function findMinMax (...num: number[]) {
   return [min, max]
 }
 const [minimum, maximum]=findMinMax(...num)
-console.log('minimum:' ,minimum, '\nMaximum:', maximum)
+// console.log('minimum:' ,minimum, '\nMaximum:', maximum)
 // ===================== Problem NO 8 ===================== //
+type myType = "red" |"green" | "blue"
+function myFun(str:myType,con?:boolean):string{
+  if(con === true){
+   return str.toLocaleUpperCase();
+  }else{
+    return str.toLocaleLowerCase();
+  }
+}
+console.log(myFun('green'))
