@@ -13,3 +13,4 @@ const myObj:Person = {
 }
 console.log(myObj.name)
 console.log(myObj.age)
+export {};
