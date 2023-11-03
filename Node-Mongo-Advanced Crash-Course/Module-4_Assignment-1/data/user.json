@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "gender": "Male",
+      "name": "John Doe",
+      "contact": "john.doe@email.com",
+      "address": "123 Main St, City",
+      "photoUrl": "https://example.com/johndoe.jpg"
+    },
+    {
+      "id": 2,
+      "gender": "Female",
+      "name": "Jane Smith",
+      "contact": "jane.smith@email.com",
+      "address": "456 Elm St, Town",
+      "photoUrl": "https://example.com/janesmith.jpg"
+    },
+    {
+      "id": 3,
+      "gender": "Male",
+      "name": "Michael Johnson",
+      "contact": "michael.johnson@email.com",
+      "address": "789 Oak St, Village",
+      "photoUrl": "https://example.com/michaeljohnson.jpg"
+    },
+    {
+      "id": 4,
+      "gender": "Female",
+      "name": "Emily Davis",
+      "contact": "emily.davis@email.com",
+      "address": "101 Pine St, County",
+      "photoUrl": "https://example.com/emilydavis.jpg"
+    },
+    {
+      "id": 5,
+      "gender": "Male",
+      "name": "David Wilson",
+      "contact": "david.wilson@email.com",
+      "address": "222 Birch St, State",
+      "photoUrl": "https://example.com/davidwilson.jpg"
+    },
+    {
+      "id": 6,
+      "gender": "Female",
+      "name": "Olivia Lee",
+      "contact": "olivia.lee@email.com",
+      "address": "333 Cedar St, Country",
+      "photoUrl": "https://example.com/olivialee.jpg"
+    },
+    {
+      "id": 7,
+      "gender": "Male",
+      "name": "James Brown",
+      "contact": "james.brown@email.com",
+      "address": "444 Elm St, State",
+      "photoUrl": "https://example.com/jamesbrown.jpg"
+    },
+    {
+      "id": 8,
+      "gender": "Female",
+      "name": "Sophia Davis",
+      "contact": "sophia.davis@email.com",
+      "address": "555 Oak St, Town",
+      "photoUrl": "https://example.com/sophiadavis.jpg"
+    },
+    {
+      "id": 9,
+      "gender": "Male",
+      "name": "Ethan Lee",
+      "contact": "ethan.lee@email.com",
+      "address": "666 Pine St, County",
+      "photoUrl": "https://example.com/ethanlee.jpg"
+    },
+    {
+      "id": 10,
+      "gender": "Female",
+      "name": "Ava Wilson",
+      "contact": "ava.wilson@email.com",
+      "address": "777 Main St, City",
+      "photoUrl": "https://example.com/avawilson.jpg"
+    }
+  ]
+  
