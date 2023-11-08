@@ -2,45 +2,54 @@
 int main(){
     int t;
     scanf("%d",&t);
-    for (int i = 0; i < t; i++)
+    for (int n = 0; n < t; n++)
     {
-        int n;
-        scanf("%d",&n);
-        int a[n], b[n], c[n];
-        for (int j = 0; j < n; j++)
+        int input;
+        scanf("%d",&input);
+        int a[input], b[input], c[input];
+        for (int i = 0; i < input; i++)
         {
-            scanf("%d",&a[j]);
+            scanf("%d",&a[i]);
         }
-        for (int j = 0; j < n; j++)
+
+        // copy array 
+        for (int i = 0; i < input; i++)
         {
             // printf("%d",a[j]);
-            b[j]=a[j];
+            b[i]=a[i];
         }
+
+        // sort assenting b[]
         int temp;
-        for (int j = 0; j < n; j++)
+        for (int i = 0; i < input; i++)
         {
-            for (int k = 0; k < n-i; k++)
+            for (int j = 0; j <= i; j++)
             {
-                if (b[k] > b[k + 1]) {
-                    temp = b[k];
-                    b[k] = b[k + 1];
-                    b[k + 1] = temp;
+                if(b[i]<b[j]){
+                    temp = b[j];
+                    b[j]=b[i];
+                    b[i]=temp;
                 }
             }
-            
         }
-        for (int j = 0; j < n; j++)
-        {
-            c[j]=a[j]-b[j];
+
+        // different and absolute value 
+        for (int i = 0; i < input; i++)
+        {   
+            if (a[i]-b[i]<0)
+            {
+                c[i]=(a[i]-b[i])*-1;
+            }else{
+                c[i]=a[i]-b[i];
+            }
         }
-        for (int j = 0; j < n; j++)
+        
+        // print the diff absolute value 
+        for (int i = 0; i < input; i++)
         {
-            printf("%d ",c[j]);
+            printf("%d ",c[i]);
         }
         printf("\n");
     }
-    
-    
-    
     return 0;
 }
