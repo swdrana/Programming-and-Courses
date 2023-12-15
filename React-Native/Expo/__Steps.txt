@@ -1,0 +1,6 @@
+======= 1st time computer =======
+npm install -g expo-cli  
+
+======= Every New Project =======
+expo init . 
+expo start
