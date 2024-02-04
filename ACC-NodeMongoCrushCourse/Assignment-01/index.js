@@ -29,7 +29,16 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
   });
-app.listen(8080, () => {
+  
+  const server = app.listen(8080, () => {
     console.log('Server is running on port 8080');
+  });
+  
+  process.on('SIGTERM', () => {
+    console.log('Received SIGTERM. Closing server...');
+    server.close(() => {
+      console.log('Server closed. Exiting process.');
+      process.exit(0);
+    });
   });
   
