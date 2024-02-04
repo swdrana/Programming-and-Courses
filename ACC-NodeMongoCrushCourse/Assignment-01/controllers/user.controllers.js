@@ -1,5 +1,6 @@
 const fs = require("fs");
-let users = JSON.parse(fs.readFileSync("userData.json"));
+const path = require('path');
+let users = JSON.parse(fs.readFileSync(path.join(__dirname,"../userData.json")));
 
 const getAllUsers = (req, res, next) => {
   if (req.query.limit != undefined) {
