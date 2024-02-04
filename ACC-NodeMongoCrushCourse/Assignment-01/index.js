@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     apis: [
       {
         "direct-api": [
-          "http://localhost:8080/user/random",
+          "https://acc-nodejs-a1.vercel.app/user/random",
           "https://acc-nodejs-a1.vercel.app/user/all",
           "https://acc-nodejs-a1.vercel.app/user/all?limit=3",
         ],
