@@ -44,3 +44,24 @@ http://localhost:8080/user/delete
 // You Are Required To Submit The Following:
 // Your GitHub Repository Link Containing The API Code.
 The Live Link Of The API Deployed In Heroku/Any Other Hosting Platform.
+
+
+
+
+
+vercel.json youtube file: 
+{
+    "version":1,
+    "builds":[
+        {
+            "src":"index.js",
+            "use":"@vercel/node"
+        }
+    ],
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"/"
+        }
+    ]
+}
