@@ -2,6 +2,8 @@
 
 
 // GET /User/Random A Random User
+http://localhost:8080/user/random
+
 // Get A Random User From The .Json File
 http://localhost:8080/user/all
 
