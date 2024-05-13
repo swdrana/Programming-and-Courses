@@ -1,3 +1,8 @@
 npm init -y
 npm i express
 create server.ts
+npm i -D nodemon
+
+now write simple console log in server ts and auto run with nodemon and tsc command. before that need to install ts and ts config:
+
+npm i typescritp
