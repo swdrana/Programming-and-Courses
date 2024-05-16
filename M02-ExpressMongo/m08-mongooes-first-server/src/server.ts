@@ -1,6 +1,9 @@
-import express from "express";
-const app = express();
+import mongoose from "mongoose";
+import { app } from "./app";
 
-app.listen(8000, () => {
+mongoose.connect("mongodb://localhost:27017/myDB").then(( ) => {
+  console.log("Database Connected");
+  app.listen(8000, () => {
     console.log("Server Connected");
-})
+  });
+});
