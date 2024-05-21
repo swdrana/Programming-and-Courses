@@ -8,7 +8,7 @@ npm i typescript --save-dev
 ### init ts json file
 
 ```bash
-tsc init
+tsc --init
 ```
 rootDir: /src
 
