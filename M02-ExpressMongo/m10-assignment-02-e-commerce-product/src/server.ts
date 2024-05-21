@@ -3,7 +3,7 @@ import env from "../env";
 import app from "./app";
 
 (async () => {
-  const { port, mongoUrl } = env;
+  const { port, mongoUrl } = env as { port: number; mongoUrl: string };
   try {
     // server setup
     app.listen(port, async () => {
