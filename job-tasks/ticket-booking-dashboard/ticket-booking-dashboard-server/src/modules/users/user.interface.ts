@@ -1,26 +1,23 @@
-export interface IUser {
-  _id: string;
+export type TUser = {
+  name: string;
+  email: string
+};
+
+export type TUserRegister = {
   name: string;
   email: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+};
 
-export interface IUserRegister {
-  name: string;
+export type TUserLogin = {
   email: string;
-}
+};
 
-export interface IUserLogin {
-  email: string;
-}
-
-export interface IAuthResponse {
-  user: IUser;
+export type IAuthResponse = {
+  user: TUser;
   token: string;
-}
+};
 
-export interface IUserUpdate {
+export type TUserUpdate = {
   name?: string;
   email?: string;
-}
+};
