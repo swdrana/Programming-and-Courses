@@ -1,6 +1,15 @@
+import mongoose from "mongoose";
+import { mongoUri, port } from "./config";
 import app from "./app";
 
+async function start() {
+  try {
+    await mongoose.connect(mongoUri as string);
+    console.log("MongoDB connected");
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    })
+  } catch (error) {}
+}
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
-});
+start();
