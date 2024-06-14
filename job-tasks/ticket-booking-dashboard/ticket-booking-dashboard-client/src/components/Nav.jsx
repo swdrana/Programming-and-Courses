@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logout from "../pages/auth/Logout";
 
 function Nav() {
   const navLink = (
@@ -8,6 +9,9 @@ function Nav() {
       </li>
       <li>
         <Link to="/register">Register</Link>
+      </li>
+      <li>
+        <Link to="/booking">Booking Ticket</Link>
       </li>
       <li>
         <a>Item 1</a>
@@ -63,7 +67,7 @@ function Nav() {
         <ul className="menu menu-horizontal px-1">{navLink}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Logout/>
       </div>
     </div>
   );

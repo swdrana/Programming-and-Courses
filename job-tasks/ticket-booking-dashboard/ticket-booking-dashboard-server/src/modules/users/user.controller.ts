@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { createUserToDB, getAllUserFromDB } from "./user.service";
+import { createUserToDB, getAllUserFromDB, getUserByEmailFromDB } from "./user.service";
 import { userValidationSchema } from "./user.validate";
 
 export const createUser = async (
@@ -8,6 +8,7 @@ export const createUser = async (
   next: NextFunction
 ) => {
   try {
+    console.log(req.body)
     const validateUserData = userValidationSchema.parse(req.body);
     const result = await createUserToDB(validateUserData);
     res.json({
@@ -36,3 +37,28 @@ export const getAllUsers = async (
     next(error);
   }
 };
+export const getUserByEmail = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { email } = req.params;
+    const user = await getUserByEmailFromDB(email);
+    if (user) {
+      res.json({
+        status: true,
+        message: "User fetched successfully",
+        data: user,
+      });
+    } else {
+      res.status(404).json({
+        status: false,
+        message: "User not found",
+      });
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
