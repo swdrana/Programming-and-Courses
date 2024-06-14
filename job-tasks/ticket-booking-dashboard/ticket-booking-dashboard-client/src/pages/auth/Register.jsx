@@ -19,8 +19,9 @@ function Register() {
   const location = useLocation();
 
   if (user) {
-    // console.log('first')
+    navigate(location.state?.from || "/");
   }
+
   const handleRegister = async (event) => {
     event.preventDefault();
 

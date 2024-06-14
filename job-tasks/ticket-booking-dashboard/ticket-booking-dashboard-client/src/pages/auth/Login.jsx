@@ -19,8 +19,9 @@ function Login() {
 
   const redirectTo = location.state?.from || "/";
   if (user) {
-    // navigate(redirectTo);
+    navigate(redirectTo);
   }
+
   const handleLogin = async (event) => {
     event.preventDefault();
 
