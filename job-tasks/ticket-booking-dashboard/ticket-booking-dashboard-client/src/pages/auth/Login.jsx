@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { getAuth } from "firebase/auth";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import axiosInstance from "../../axiosConfig";
 import { useUser } from "../../context/UserContext";
 import app from "../../firebase/firebaseConfig";
@@ -11,11 +11,16 @@ const auth = getAuth(app);
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const { setUser, setDbUser } = useUser();
   const navigate = useNavigate();
   const location = useLocation();
 
+  const redirectTo = location.state?.from || "/";
+  if (user) {
+    // navigate(redirectTo);
+  }
   const handleLogin = async (event) => {
     event.preventDefault();
 
@@ -25,14 +30,18 @@ function Login() {
       if (loggedInUser) {
         setUser(loggedInUser.user);
 
-        const response = await axiosInstance.get(`/users/${loggedInUser.user.email}`);
+        const response = await axiosInstance.get(
+          `/users/${loggedInUser.user.email}`
+        );
         setDbUser(response.data);
 
-        const redirectTo = location.state?.from || "/";
         navigate(redirectTo);
       }
     } catch (error) {
-      console.error("Error logging in user:", error.response ? error.response.data : error.message);
+      console.error(
+        "Error logging in user:",
+        error.response ? error.response.data : error.message
+      );
     }
   };
 
@@ -42,7 +51,9 @@ function Login() {
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi.
           </p>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -74,7 +85,11 @@ function Login() {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary" type="submit" disabled={loading}>
+              <button
+                className="btn btn-primary"
+                type="submit"
+                disabled={loading}
+              >
                 {loading ? "Logging in..." : "Login"}
               </button>
             </div>

@@ -6,10 +6,12 @@ import app from '../firebase/firebaseConfig';
 const auth = getAuth(app);
 const UserContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useUser = () => {
   return useContext(UserContext);
 };
 
+// eslint-disable-next-line react/prop-types
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [dbUser, setDbUser] = useState(null);
