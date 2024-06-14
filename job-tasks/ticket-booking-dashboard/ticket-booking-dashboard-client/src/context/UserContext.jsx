@@ -6,12 +6,10 @@ import app from '../firebase/firebaseConfig';
 const auth = getAuth(app);
 const UserContext = createContext();
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useUser = () => {
   return useContext(UserContext);
 };
 
-// eslint-disable-next-line react/prop-types
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [dbUser, setDbUser] = useState(null);
@@ -20,10 +18,12 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
+        console.log("Firebase user:", firebaseUser);
         setUser(firebaseUser);
         try {
           const response = await axiosInstance.get(`/users/${firebaseUser.email}`);
           setDbUser(response.data);
+          console.log("DB user:", response.data);
         } catch (error) {
           console.error('Error fetching db user:', error);
         }

@@ -6,12 +6,12 @@ import Home from "../pages/home";
 import PrivateRoute from "../components/PrivateRoute";
 import BookingTicket from "../pages/BookingTicket/BookingTicket";
 import PublicRoute from "../components/PublicRoute";
+import EventDetails from "../pages/EventDetails/EventDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    //   loader: rootLoader,
     children: [
       {
         path: "/",
@@ -19,21 +19,35 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <PublicRoute><Login /></PublicRoute>,
+        element: (
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        ),
       },
       {
         path: "/register",
-        element: <PublicRoute><Register /></PublicRoute>,
+        element: (
+          <PublicRoute>
+            <Register />
+          </PublicRoute>
+        ),
       },
       {
         path: "/booking",
-        element: <PrivateRoute />,
-        children: [
-          {
-            path: "",
-            element: <BookingTicket />,
-          },
-        ],
+        element: (
+          <PrivateRoute>
+            <BookingTicket />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/events/:eventId",
+        element: (
+          <PrivateRoute>
+            <EventDetails />
+          </PrivateRoute>
+        ),
       },
     ],
   },
