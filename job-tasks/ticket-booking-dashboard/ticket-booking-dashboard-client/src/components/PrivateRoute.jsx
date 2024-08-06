@@ -1,10 +1,11 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useUser } from '../context/UserContext';
 
+// eslint-disable-next-line react/prop-types
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useUser();
   const location = useLocation();
-
+// hi 
   console.log("PrivateRoute - Loading:", loading);
   console.log("PrivateRoute - User:", user);
 
