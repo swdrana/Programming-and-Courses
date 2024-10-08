@@ -1,4 +1,5 @@
-1. String Concatination
+# Python Strings
+1. String Concatenation
 2. Length of String
 3. Accessing a Character
 4. Accessing a Subset of Characters

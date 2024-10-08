@@ -47,3 +47,7 @@ print(template.substitute(artist='Rana', song='gaaaaaan', year=2025))
 # $$
 template = string.Template('${artist} sing $song in $year')
 print(template.substitute(artist='Rana', song='gaaaaaan', year=2025))
+
+# safe substitute
+template = string.Template('${artist} sing $song in $year')
+print(template.safe_substitute(artist='Rana', song='gaaaaaan'))
