@@ -11,7 +11,7 @@ def drawQuarterCircle(radius):
     """Draws a quarter circle based on the given radius."""
     t.penup()
     t.goto(0, radius)  # Starting position at the top of the quarter circle
-    t.setheading(0)  # Face the turtle to the right
+    # t.setheading(0)  # Face the turtle to the right
     t.pendown()
     t.speed(0)  # Set to fastest speed
 
