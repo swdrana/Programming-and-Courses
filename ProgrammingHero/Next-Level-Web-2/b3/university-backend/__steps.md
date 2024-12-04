@@ -40,3 +40,9 @@ now use tsc for compile ts to js:
 tsc
 node dist/app.js
 ```
+
+
+## After Setup Project
+- Routing
+....
+- Validation
